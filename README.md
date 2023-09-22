@@ -1,5 +1,3 @@
-# Earn
-earn all
 <!DOCTYPE html>
 <html lang="en">
 <head>
