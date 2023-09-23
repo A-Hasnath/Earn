@@ -35,11 +35,6 @@ button:hover {
   margin-left: 25px; /* Apply a 25px margin to the left of the element */
 }
 
-.header {
-  display: flex;
-  align-items: center;
-}
-
 .header img {
   width: 50px; /* Adjust the width of the logo as needed */
   height: auto; /* Maintain aspect ratio */
