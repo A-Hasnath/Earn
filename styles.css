@@ -40,3 +40,9 @@ button:hover {
   height: auto; /* Maintain aspect ratio */
   margin-right: 10px; /* Adjust the spacing between logo and text */
 }
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+}
+
