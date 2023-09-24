@@ -8,14 +8,15 @@ function changeContent() {
 }
 
 function search() {
-  var searchTerm = document.getElementById('searchInput').value;
+  var searchTerm = document.querySelector('.search-bar input').value;
   var resultsContainer = document.getElementById('results');
 
-  // Replace this with your actual search logic
-  // For simplicity, let's assume there are no search results
-  var searchResults = []; 
+  // Assume there are no search results for this example
+  var searchResults = [];
 
-  if (searchResults.length === 0) {
+  if (searchTerm === '') {
+    resultsContainer.innerHTML = ''; // Clear the results if search term is empty
+  } else if (searchResults.length === 0) {
     resultsContainer.innerHTML = 'No results found for: ' + searchTerm;
   } else {
     // Display search results
