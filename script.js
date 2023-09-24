@@ -8,3 +8,12 @@ function changeContent() {
      crossorigin="anonymous"></script>
     ;
 }
+function search() {
+  var searchTerm = document.getElementById('searchInput').value;
+  var resultsContainer = document.getElementById('results');
+
+  // Perform your search logic here
+  // For simplicity, we'll just display a message with the search term
+
+  resultsContainer.innerHTML = 'You searched for: ' + searchTerm;
+}
