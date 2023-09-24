@@ -12,8 +12,15 @@ function search() {
   var searchTerm = document.getElementById('searchInput').value;
   var resultsContainer = document.getElementById('results');
 
-  // Perform your search logic here
-  // For simplicity, we'll just display a message with the search term
+  // Replace this with your actual search logic
+  // For simplicity, let's assume there are no search results
+  var searchResults = []; 
 
-  resultsContainer.innerHTML = 'You searched for: ' + searchTerm;
+  if (searchResults.length === 0) {
+    resultsContainer.innerHTML = 'No results found for: ' + searchTerm;
+  } else {
+    // Display search results
+    resultsContainer.innerHTML = 'Search results for: ' + searchTerm;
+    // Render search results here
+  }
 }
