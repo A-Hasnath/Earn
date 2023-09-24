@@ -53,5 +53,25 @@ button:hover {
 
   color: white; /* Sets the text color to white */
 
+.search-bar {
+  display: flex;
+}
 
+.search-bar input {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  background-color: #333333; /* Charcoal Black background */
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.search-bar button:hover {
+  background-color: #191970; /* Midnight Black hover color */
+}
   
