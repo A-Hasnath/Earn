@@ -51,3 +51,6 @@ button:hover {
   flex-direction: column;
 }
 
+body {
+  color: white; /* Sets the text color to white */
+}
