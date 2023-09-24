@@ -58,12 +58,13 @@ button:hover {
 }
 
 .search-bar input {
-  padding: 10px;
-  font-size: 16px;
+  padding: 15px;
+  font-size: 18px;
+  width: 300px; /* Adjust the width of the input field */  
 }
 
 .search-bar button {
-  padding: 10px 20px;
+  padding: 15px 25px;
   background-color: #333333; /* Charcoal Black background */
   color: white;
   border: none;
