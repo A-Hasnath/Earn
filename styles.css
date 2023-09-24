@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;  background-color: #rgb(0, 0, 139); /* Use a dark blue colour */
+  font-family: Arial, sans-serif; color: white; /* Sets the text color to white */  background-color: #rgb(0, 0, 139); /* Use a dark blue colour */
 }
 
 header, footer {
@@ -51,6 +51,5 @@ button:hover {
   flex-direction: column;
 }
 
-body {
   color: white; /* Sets the text color to white */
-}
+
