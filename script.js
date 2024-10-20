@@ -32,6 +32,35 @@ const tasks = {
     }
 };
 
+// Function to load saved progress from local storage
+function loadProgress() {
+    const savedBalance = localStorage.getItem('balance');
+    const savedHistory = localStorage.getItem('rewardHistory');
+
+    // Load balance if it exists
+    if (savedBalance !== null) {
+        balance = parseInt(savedBalance, 10);
+        balanceElement.textContent = balance;
+    }
+
+    // Load reward history if it exists
+    if (savedHistory !== null) {
+        const rewardHistory = JSON.parse(savedHistory);
+        rewardHistory.forEach(reward => {
+            const rewardItem = document.createElement('li');
+            rewardItem.textContent = reward;
+            rewardHistoryList.appendChild(rewardItem);
+        });
+    }
+}
+
+// Function to save progress to local storage
+function saveProgress() {
+    localStorage.setItem('balance', balance);  // Save balance
+    const rewardHistoryItems = Array.from(rewardHistoryList.children).map(item => item.textContent);
+    localStorage.setItem('rewardHistory', JSON.stringify(rewardHistoryItems));  // Save reward history
+}
+
 // Function to handle task completion
 function completeTask(taskId) {
     const task = tasks[taskId];
@@ -50,7 +79,13 @@ function completeTask(taskId) {
         rewardHistoryList.appendChild(rewardItem);
         
         alert(`Task completed! You earned ${task.reward} coins.`);
+        
+        // Save progress after task completion
+        saveProgress();
     } else {
         alert("Task failed. Try again.");
     }
 }
+
+// Load user progress when the page loads
+window.onload = loadProgress;
