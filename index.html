@@ -13,14 +13,14 @@
         <p>Welcome to the Crypto MiniApp!</p>
     </div>
 
-    <div id="mine" class="tab-content">
-        <h2>Mine</h2>
-        <p>Your Balance: <span id="balance">0</span> coins</p>
-        <h3>Reward History</h3>
-        <ul id="reward-history-list"></ul>
-        <button id="clear-progress-btn" class="btn">Clear Progress</button>
+     <div id="tasks" class="tab-content">
+        <h2>Tasks</h2>
+        <p>Select a task to complete and earn rewards!</p>
+        <button onclick="completeTask(1)">Complete Task 1</button>
+        <button onclick="completeTask(2)">Complete Task 2</button>
+        <button onclick="completeTask(3)">Complete Task 3</button>
     </div>
-
+    
     <div id="refer" class="tab-content">
         <h2>Refer</h2>
         <p>Refer a friend to earn rewards! Share your referral link:</p>
@@ -35,7 +35,7 @@
     <!-- Bottom Tab Navigation -->
     <div class="tab-bar">
         <button class="tab-link active" onclick="openTab(event, 'home')">Home</button>
-        <button class="tab-link" onclick="openTab(event, 'mine')">Mine</button>
+        <button class="tab-link" onclick="openTab(event, 'tasks')">tasks</button>
         <button class="tab-link" onclick="openTab(event, 'refer')">Refer</button>
         <button class="tab-link" onclick="openTab(event, 'wallet')">Wallet</button>
     </div>
