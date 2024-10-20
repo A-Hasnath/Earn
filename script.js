@@ -43,6 +43,24 @@ function clearProgress() {
     alert('Progress cleared!');
 }
 
+// Task completion logic
+function completeTask(taskId) {
+    const rewards = {
+        1: 10,
+        2: 20,
+        3: 30
+    };
+    
+    const reward = rewards[taskId] || 0;
+    balance += reward;
+    balanceElement.textContent = balance;
+    const rewardItem = document.createElement('li');
+    rewardItem.textContent = `Task ${taskId} completed. Reward: ${reward} coins`;
+    rewardHistoryList.appendChild(rewardItem);
+    
+    saveProgress(); // Save progress after completing a task
+}
+
 // Tab switching logic
 function openTab(event, tabId) {
     // Hide all tab content
