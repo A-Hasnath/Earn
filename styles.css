@@ -2,12 +2,14 @@
 
 /* General styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     height: 100vh;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
 }
 
 /* Tab content styling */
@@ -17,7 +19,6 @@ body {
     display: none;
 }
 
-/* Display the active tab */
 .active-tab {
     display: block;
 }
@@ -26,11 +27,12 @@ body {
 .tab-bar {
     display: flex;
     justify-content: space-around;
-    background-color: #333;
+    background-color: #1c1c1c; /* Darker grey for the tab bar */
     position: fixed;
     bottom: 0;
     width: 100%;
     padding: 10px 0;
+    border-top: 1px solid #4CAF50; /* Add a green border */
 }
 
 /* Tab link styles */
@@ -38,30 +40,50 @@ body {
     flex-grow: 1;
     text-align: center;
     padding: 10px;
-    background-color: #333;
-    color: white;
+    background-color: transparent;
+    color: #fff;
     border: none;
     outline: none;
     cursor: pointer;
     font-size: 16px;
+    position: relative;
 }
 
 .tab-link.active {
+    color: #4CAF50; /* Highlight active tab with green */
+    border-top: 2px solid #4CAF50;
+}
+
+.tab-link:hover {
+    color: #ccc; /* Lighter hover effect */
+}
+
+/* Buttons */
+.btn {
     background-color: #4CAF50;
-}
-
-/* Highlight the active tab */
-.tab-link.active {
     color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
 }
 
-/* Tab content layout */
-.tab-content h2 {
-    margin-top: 0;
+.btn:hover {
+    background-color: #45a049;
 }
 
+/* Inputs */
 input[type="text"] {
     width: 100%;
     padding: 10px;
     margin-top: 10px;
+    background-color: #333;
+    color: white;
+    border: 1px solid #4CAF50;
+    border-radius: 4px;
+}
+
+/* Adding subtle box-shadow for visual effects */
+.tab-content h2, .btn, input {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    border-radius: 4px;
 }
