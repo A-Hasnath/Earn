@@ -20,6 +20,34 @@ h1 {
     color: #2c3e50;
 }
 
+.tab-navigation {
+    margin-bottom: 20px;
+}
+
+.tab-link {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.tab-link.active {
+    background-color: #2980b9;
+}
+
+.tab-content {
+    display: none;
+    margin-top: 20px;
+}
+
+.tab-content.active-tab {
+    display: block;
+}
+
 .btn {
     padding: 10px 20px;
     background-color: #3498db;
@@ -35,27 +63,6 @@ h1 {
     background-color: #2980b9;
 }
 
-.reward-display {
-    margin: 20px 0;
-    font-size: 24px;
-}
-
-.task-list {
-    margin-top: 20px;
-    text-align: left;
-}
-
-.task {
-    background-color: #ecf0f1;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 5px;
-}
-
-.reward-history {
-    margin-top: 20px;
-}
-
 .reward-history ul {
     list-style-type: none;
     padding: 0;
@@ -67,3 +74,5 @@ h1 {
     margin: 5px 0;
     border-radius: 5px;
 }
+/* styles.css */
+/* Add the existing styles for the app here (from the previous example) */
