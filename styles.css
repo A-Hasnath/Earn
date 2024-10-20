@@ -1,78 +1,69 @@
+/* styles.css */
 body {
-  font-family: Arial, sans-serif; color: white; /* Sets the text color to white */ background-color: black; /* Sets the background color to black */
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    text-align: center;
+    padding: 20px;
 }
 
-header, footer {
-  background-color: #333333;
-  padding: 20px;
+.app-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-main {
-  padding: 20px;
+h1 {
+    color: #2c3e50;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+.btn {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 20px 0;
 }
 
-button {
-  padding: 10px 20px;
-  background-color: #008CBA;
-  color: white;
-  border: none;
-  cursor: pointer;
+.btn:hover {
+    background-color: #2980b9;
 }
 
-button:hover {
-  background-color: #005F6B;
+.reward-display {
+    margin: 20px 0;
+    font-size: 24px;
 }
 
-.your-element {
-  margin-top: 10px; /* Apply a 10px margin to the top of the element */
-  margin-right: 20px; /* Apply a 20px margin to the right of the element */
-  margin-bottom: 15px; /* Apply a 15px margin to the bottom of the element */
-  margin-left: 25px; /* Apply a 25px margin to the left of the element */
+.progress-container {
+    margin-top: 20px;
 }
 
-.header {
-  display: flex;
-  align-items: center;
+.progress-bar {
+    width: 0;
+    height: 20px;
+    background-color: #27ae60;
+    border-radius: 10px;
+    transition: width 0.3s ease;
 }
 
-.header img {
-  width: 100px; /* Adjust the width of the logo as needed */
-  height: auto; /* Maintain aspect ratio */
-  margin-right: 10px; /* Adjust the spacing between logo and text */
+.reward-history {
+    margin-top: 20px;
 }
 
-.header-text {
-  display: flex;
-  flex-direction: column;
+.reward-history ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-  color: white; /* Sets the text color to white */
-
-.search-bar {
-  display: flex;
+.reward-history li {
+    background-color: #ecf0f1;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
 }
-
-.search-bar input {
-  padding: 15px;
-  font-size: 18px;
-  width: 300px; /* Adjust the width of the input field */  
-}
-
-.search-bar button {
-  padding: 15px 25px;
-  background-color: #333333; /* Charcoal Black background */
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.search-bar button:hover {
-  background-color: #191970; /* Midnight Black hover color */
-}
-  
