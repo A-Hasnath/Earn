@@ -3,36 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task-Based Reward Mini-App</title>
+    <title>Task Reward Mini-App with Tabs</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="app-container">
-        <h1>Task Reward System</h1>
+        <h1>Task Reward Mini-App</h1>
 
-        <div class="reward-display">
-            <h2>Your Balance: <span id="balance">0</span> Coins</h2>
+        <!-- Tab navigation -->
+        <div class="tab-navigation">
+            <button class="tab-link active" onclick="openTab(event, 'home')">Home</button>
+            <button class="tab-link" onclick="openTab(event, 'tasks')">Task</button>
+            <button class="tab-link" onclick="openTab(event, 'mine')">Mine</button>
         </div>
 
-        <h3>Available Tasks:</h3>
-        <div class="task-list">
-            <div class="task">
-                <p>Task 1: Solve a simple math problem (5 + 3)</p>
-                <button class="btn" onclick="completeTask(1)">Complete Task 1</button>
-            </div>
+        <!-- Tab content: Home -->
+        <div id="home" class="tab-content active-tab">
+            <h2>Welcome to the Task Reward Mini-App!</h2>
+            <p>This is the home page where you can learn more about how the app works.</p>
+        </div>
 
-            <div class="task">
-                <p>Task 2: Answer this question: What is the capital of France?</p>
-                <button class="btn" onclick="completeTask(2)">Complete Task 2</button>
-            </div>
+        <!-- Tab content: Tasks -->
+        <div id="tasks" class="tab-content">
+            <h3>Available Tasks:</h3>
+            <div class="task-list">
+                <div class="task">
+                    <p>Task 1: Solve a simple math problem (5 + 3)</p>
+                    <button class="btn" onclick="completeTask(1)">Complete Task 1</button>
+                </div>
 
-            <div class="task">
-                <p>Task 3: Click to complete a random task</p>
-                <button class="btn" onclick="completeTask(3)">Complete Task 3</button>
+                <div class="task">
+                    <p>Task 2: Answer this question: What is the capital of France?</p>
+                    <button class="btn" onclick="completeTask(2)">Complete Task 2</button>
+                </div>
+
+                <div class="task">
+                    <p>Task 3: Click to complete a random task</p>
+                    <button class="btn" onclick="completeTask(3)">Complete Task 3</button>
+                </div>
             </div>
         </div>
 
-        <div class="reward-history">
+        <!-- Tab content: Mine -->
+        <div id="mine" class="tab-content">
+            <h3>Your Profile</h3>
+            <p>Balance: <span id="balance">0</span> Coins</p>
+
             <h3>Reward History:</h3>
             <ul id="reward-history-list">
                 <!-- Completed tasks and rewards will be listed here -->
