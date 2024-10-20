@@ -32,7 +32,7 @@ const tasks = {
     }
 };
 
-// Function to load saved progress from local storage
+// Function to load saved progress from localStorage
 function loadProgress() {
     const savedBalance = localStorage.getItem('balance');
     const savedHistory = localStorage.getItem('rewardHistory');
@@ -54,7 +54,7 @@ function loadProgress() {
     }
 }
 
-// Function to save progress to local storage
+// Function to save progress to localStorage
 function saveProgress() {
     localStorage.setItem('balance', balance);  // Save balance
     const rewardHistoryItems = Array.from(rewardHistoryList.children).map(item => item.textContent);
@@ -87,5 +87,40 @@ function completeTask(taskId) {
     }
 }
 
+// Function to clear progress
+function clearProgress() {
+    localStorage.removeItem('balance');
+    localStorage.removeItem('rewardHistory');
+    balance = 0;
+    balanceElement.textContent = balance;
+    rewardHistoryList.innerHTML = '';  // Clear the reward history list
+    alert('Progress cleared!');
+}
+
+// Tab switching function
+function openTab(event, tabId) {
+    // Hide all tab content
+    const tabs = document.querySelectorAll('.tab-content');
+    tabs.forEach(tab => {
+        tab.classList.remove('active-tab');
+    });
+
+    // Remove active class from all tab buttons
+    const tabLinks = document.querySelectorAll('.tab-link');
+    tabLinks.forEach(link => {
+        link.classList.remove('active');
+    });
+
+    // Show the clicked tab and make its button active
+    document.getElementById(tabId).classList.add('active-tab');
+    event.currentTarget.classList.add('active');
+}
+
 // Load user progress when the page loads
-window.onload = loadProgress;
+window.onload = function () {
+    loadProgress();
+    openTab(event, 'home');
+};
+
+// Attach event listener to the clear button (if implemented)
+document.getElementById('clear-progress-btn').addEventListener('click', clearProgress);
