@@ -1,26 +1,45 @@
-function changeContent() {
-  const mainContent = document.querySelector('main');
-  mainContent.innerHTML = `
-    <h2>New Content Heading</h2>
-    <p>This is the new content after clicking the button.</p>
-    <button onclick="changeContent()">Change Content</button>
-  `;
+// script.js
+
+let balance = 0;
+let miningProgress = 0;
+const miningSpeed = 10;  // Speed of mining progress
+
+const balanceElement = document.getElementById('balance');
+const progressBarElement = document.getElementById('progress-bar');
+const rewardHistoryList = document.getElementById('reward-history-list');
+const mineButton = document.getElementById('mine-btn');
+
+// Function to simulate mining
+function startMining() {
+    // Disable the button while mining
+    mineButton.disabled = true;
+
+    // Simulate mining progress
+    const miningInterval = setInterval(() => {
+        miningProgress += miningSpeed;
+        progressBarElement.style.width = miningProgress + '%';
+
+        if (miningProgress >= 100) {
+            clearInterval(miningInterval);
+            rewardUser();
+            miningProgress = 0;
+            progressBarElement.style.width = '0%';
+            mineButton.disabled = false;
+        }
+    }, 100);  // Mining progress increases every 100ms
 }
 
-function search() {
-  var searchTerm = document.querySelector('.search-bar input').value;
-  var resultsContainer = document.getElementById('results');
+// Function to reward the user
+function rewardUser() {
+    const minedCoins = Math.floor(Math.random() * 10) + 1;  // Random coins between 1-10
+    balance += minedCoins;
+    balanceElement.textContent = balance;
 
-  // Assume there are no search results for this example
-  var searchResults = [];
-
-  if (searchTerm === '') {
-    resultsContainer.innerHTML = ''; // Clear the results if search term is empty
-  } else if (searchResults.length === 0) {
-    resultsContainer.innerHTML = 'No results found for: ' + searchTerm;
-  } else {
-    // Display search results
-    resultsContainer.innerHTML = 'Search results for: ' + searchTerm;
-    // Render search results here
-  }
+    // Add reward to history
+    const rewardItem = document.createElement('li');
+    rewardItem.textContent = `You mined ${minedCoins} coins`;
+    rewardHistoryList.appendChild(rewardItem);
 }
+
+// Attach event listener to the button
+mineButton.addEventListener('click', startMining);
