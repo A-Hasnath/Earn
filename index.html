@@ -3,60 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Reward Mini-App with Tabs</title>
+    <title>MiniApp with Tabs</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="app-container">
-        <h1>Task Reward Mini-App</h1>
-
-        <!-- Tab navigation -->
-        <div class="tab-navigation">
-            <button class="tab-link active" onclick="openTab(event, 'home')">Home</button>
-            <button class="tab-link" onclick="openTab(event, 'tasks')">Task</button>
-            <button class="tab-link" onclick="openTab(event, 'mine')">Mine</button>
-        </div>
-
-        <!-- Tab content: Home -->
-        <div id="home" class="tab-content active-tab">
-            <h2>Welcome to the Task Reward Mini-App!</h2>
-            <p>This is the home page where you can learn more about how the app works.</p>
-        </div>
-
-        <!-- Tab content: Tasks -->
-        <div id="tasks" class="tab-content">
-            <h3>Available Tasks:</h3>
-            <div class="task-list">
-                <div class="task">
-                    <p>Task 1: Solve a simple math problem (5 + 3)</p>
-                    <button class="btn" onclick="completeTask(1)">Complete Task 1</button>
-                </div>
-
-                <div class="task">
-                    <p>Task 2: Answer this question: What is the capital of France?</p>
-                    <button class="btn" onclick="completeTask(2)">Complete Task 2</button>
-                </div>
-
-                <div class="task">
-                    <p>Task 3: Click to complete a random task</p>
-                    <button class="btn" onclick="completeTask(3)">Complete Task 3</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tab content: Mine -->
-        <div id="mine" class="tab-content">
-            <h3>Your Profile</h3>
-            <p>Balance: <span id="balance">0</span> Coins</p>
-
-            <h3>Reward History:</h3>
-            <ul id="reward-history-list">
-                <!-- Completed tasks and rewards will be listed here -->
-            </ul>
-        </div>
+    <!-- Tab Content -->
+    <div id="home" class="tab-content">
+        <h2>Home</h2>
+        <p>Welcome to the MiniApp. Complete tasks to earn rewards!</p>
     </div>
 
-    div id="refer" class="tab-content">
+    <div id="tasks" class="tab-content">
+        <h2>Tasks</h2>
+        <p>Select a task and complete it to earn rewards.</p>
+        <button onclick="completeTask(1)">Complete Task 1</button>
+        <button onclick="completeTask(2)">Complete Task 2</button>
+        <button onclick="completeTask(3)">Complete Task 3</button>
+    </div>
+
+    <div id="mine" class="tab-content">
+        <h2>Mine</h2>
+        <p>Your Balance: <span id="balance">0</span> coins</p>
+        <h3>Reward History</h3>
+        <ul id="reward-history-list"></ul>
+        <button id="clear-progress-btn" class="btn">Clear Progress</button>
+    </div>
+
+    <div id="refer" class="tab-content">
         <h2>Refer a Friend</h2>
         <p>Refer a friend and earn rewards! Share this referral link:</p>
         <input type="text" value="https://miningapp.com/referral123" readonly>
