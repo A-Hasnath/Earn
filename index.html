@@ -3,22 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MiniApp with Tabs</title>
+    <title>MiniApp with 4 Tabs</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Tab Content -->
-    <div id="home" class="tab-content">
+    <div id="home" class="tab-content active-tab">
         <h2>Home</h2>
-        <p>Welcome to the MiniApp. Complete tasks to earn rewards!</p>
-    </div>
-
-    <div id="tasks" class="tab-content">
-        <h2>Tasks</h2>
-        <p>Select a task and complete it to earn rewards.</p>
-        <button onclick="completeTask(1)">Complete Task 1</button>
-        <button onclick="completeTask(2)">Complete Task 2</button>
-        <button onclick="completeTask(3)">Complete Task 3</button>
+        <p>Welcome to the Crypto MiniApp!</p>
     </div>
 
     <div id="mine" class="tab-content">
@@ -30,17 +22,22 @@
     </div>
 
     <div id="refer" class="tab-content">
-        <h2>Refer a Friend</h2>
-        <p>Refer a friend and earn rewards! Share this referral link:</p>
-        <input type="text" value="https://miningapp.com/referral123" readonly>
+        <h2>Refer</h2>
+        <p>Refer a friend to earn rewards! Share your referral link:</p>
+        <input type="text" value="https://cryptominingapp.com/referral123" readonly>
+    </div>
+
+    <div id="wallet" class="tab-content">
+        <h2>Wallet</h2>
+        <p>Check your crypto wallet balance and transactions here.</p>
     </div>
 
     <!-- Bottom Tab Navigation -->
     <div class="tab-bar">
         <button class="tab-link active" onclick="openTab(event, 'home')">Home</button>
-        <button class="tab-link" onclick="openTab(event, 'tasks')">Tasks</button>
         <button class="tab-link" onclick="openTab(event, 'mine')">Mine</button>
         <button class="tab-link" onclick="openTab(event, 'refer')">Refer</button>
+        <button class="tab-link" onclick="openTab(event, 'wallet')">Wallet</button>
     </div>
 
     <script src="script.js"></script>
